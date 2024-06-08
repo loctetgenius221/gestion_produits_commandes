@@ -10,7 +10,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+// Les routes pour le dashboard
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/produits', [AdminController::class, 'produits'])->name('admin.produits');
+    Route::get('/admin/commandes', [AdminController::class, 'commandes'])->name('admin.commandes');
+    Route::get('/admin/categories', [AdminController::class, 'categories'])->name('admin.categories');
+    Route::get('/admin/clients', [AdminController::class, 'clients'])->name('admin.clients');
+
+});
 
 // Route pour les Authentification
 Route::get("/register", [RegisterController::class, 'create'])->name('register');
