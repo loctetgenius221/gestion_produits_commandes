@@ -57,6 +57,14 @@ class AdminController extends Controller
         return redirect()->route('admin.categories')->with('success', 'Catégorie modifié avec succès');
     }
 
+    public function supprimer($id) {
+
+        $categorie = Categorie::findOrFail($id);
+        $categorie->delete();
+
+        return redirect()->route('admin.categories')->with('success', 'Catégorie supprimer avec succès');
+    }
+
 
 
     public function clients() {

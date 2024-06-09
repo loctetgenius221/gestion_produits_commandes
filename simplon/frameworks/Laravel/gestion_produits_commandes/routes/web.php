@@ -21,6 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/categories/ajouter/traitement', [AdminController::class, 'ajouterTraitement'])->name('categories-traitement');
     Route::get('/admin/categories/modifier{id}', [AdminController::class, 'modifier'])->name('categories-modifier');
     Route::post('/admin/categories/modifier/traitement', [AdminController::class, 'modifierTraitement'])->name('categories-modifier-traitement');
+    Route::get('/categories/supprimer{id}', [AdminController::class, 'supprimer'])->name('categories-supprimer');
 
 
 

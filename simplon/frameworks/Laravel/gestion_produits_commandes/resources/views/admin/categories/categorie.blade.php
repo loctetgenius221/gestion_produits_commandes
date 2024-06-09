@@ -62,7 +62,7 @@
                 <td>{{ $categorie->libelle }}</td>
                 <td>
                     <a href="{{ route('categories-modifier', $categorie->id) }}" class="btn-categorie btn-update"><i class="fa-solid fa-pencil"></i></a>
-                    <a href="" class="btn-categorie btn-delete"><i class="fa-solid fa-trash"></i></a>
+                    <a href="{{ route('categories-supprimer', $categorie->id) }}" class="btn-categorie btn-delete"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         @endforeach
