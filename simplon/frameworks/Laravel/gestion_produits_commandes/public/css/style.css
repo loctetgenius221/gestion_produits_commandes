@@ -13,9 +13,6 @@
 body {
     /* background: #dfe9f5; */
     background: #eeeeee;
-}
-
-.header {
     display: flex;
 }
 
@@ -75,7 +72,7 @@ nav i{
     background: none;
 }
 
-a:hover {
+a.sidebar-link:hover {
     color: black;
     background: #eee;
 }
@@ -83,14 +80,19 @@ a:hover {
 .logout {
     position: absolute;
     bottom: 0;
+    cursor: pointer;
 }
 
 .logout button {
     color: #eee;
 }
 
-.main-top {
+.main {
     width: 100%;
+}
+
+.main-top {
+    width: auto;
     height: 50px;
     background: #fff;
     display: flex;
@@ -100,5 +102,19 @@ a:hover {
 
 .main-top h2 {
     font-size: 16px;
+}
+
+/* === === */
+alert-succes
+.alert {
+    color: red;
+}
+
+.alert ul,
+.alert-succes ul {
+    list-style: none;
+}
+.alert-succes {
+    color: green;
 }
 
