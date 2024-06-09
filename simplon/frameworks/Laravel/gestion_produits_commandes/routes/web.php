@@ -3,13 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+Route::get('/', [FrontendController::class, 'index'])->name('index');
 
 // Les routes pour le dashboard
 
