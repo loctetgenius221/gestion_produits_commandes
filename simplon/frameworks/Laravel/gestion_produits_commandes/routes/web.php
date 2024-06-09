@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -16,8 +17,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
     // Crud Produits
-    Route::get('/admin/produits', [AdminController::class, 'produits'])->name('admin.produits');
-    
+    Route::get('/produits', [ProduitController::class, 'index'])->name('admin.produits');
+    Route::post('/produits', [ProduitController::class, 'ajouter'])->name('produits.traitement');
+    Route::get('/produits/{produit}/modifier', [ProduitController::class, 'modifier'])->name('produits.modifier');
+    Route::put('/produits/{produit}', [ProduitController::class, 'modifierTraitement'])->name('produits.modifier.traitement');
+    Route::get('/produits/{produit}', [ProduitController::class, 'supprimer'])->name('produits.supprimer');
+
 
     Route::get('/admin/commandes', [AdminController::class, 'commandes'])->name('admin.commandes');
 

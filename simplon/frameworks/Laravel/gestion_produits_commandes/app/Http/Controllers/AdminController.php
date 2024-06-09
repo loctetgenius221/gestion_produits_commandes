@@ -15,8 +15,7 @@ class AdminController extends Controller
     // Crud produits
     public function produits() {
 
-        $produits = Produit::all();
-        return view('admin.produits.produit', compact('produits'));
+        
     }
 
 
