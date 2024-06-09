@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produit;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 
@@ -11,11 +12,20 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    // Crud produits
     public function produits() {
-        return view('admin.produits');
+
+        $produits = Produit::all();
+        return view('admin.produits.produit', compact('produits'));
     }
 
+
+
+
+
+    // Crud Commandes
     public function commandes() {
+
         return view('admin.commandes');
     }
 
@@ -64,6 +74,7 @@ class AdminController extends Controller
 
         return redirect()->route('admin.categories')->with('success', 'Catégorie supprimer avec succès');
     }
+
 
 
 

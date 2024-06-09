@@ -14,9 +14,14 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    // Crud Produits
     Route::get('/admin/produits', [AdminController::class, 'produits'])->name('admin.produits');
+    
+
     Route::get('/admin/commandes', [AdminController::class, 'commandes'])->name('admin.commandes');
 
+    // Crud pour les catégories
     Route::get('/admin/categories', [AdminController::class, 'categories'])->name('admin.categories');
     Route::post('/admin/categories/ajouter/traitement', [AdminController::class, 'ajouterTraitement'])->name('categories-traitement');
     Route::get('/admin/categories/modifier{id}', [AdminController::class, 'modifier'])->name('categories-modifier');
