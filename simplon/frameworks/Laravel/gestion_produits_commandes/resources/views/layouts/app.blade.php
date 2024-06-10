@@ -17,10 +17,10 @@
                         <span class="nav-item">Kane & Frères</span>
                     </a>
                 </li>
-                <li><a href="{{ route('admin.index') }}" class="sidebar-link">
+                {{-- <li><a href="{{ route('admin.index') }}" class="sidebar-link">
                     <i class="fa-solid fa-house"></i>
                     <span class="nav-item">Acceuil</span>
-                </a></li>
+                </a></li> --}}
                 <li><a href="{{ route('admin.commandes') }}" class="sidebar-link">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="nav-item">Commandes</span>
