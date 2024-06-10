@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +13,14 @@
     <div class="container">
         <a href="" class="logo">Kane & Frères</a>
         <ul class="nav-links">
-            <li><a href="#">Accueil</a></li>
+            <li><a href="{{ route('index') }}">Accueil</a></li>
             <li><a href="#">Produits</a></li>
             <li><a href="#">Catégories</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
         <div class="auth-buttons">
-            <a href="#" class="btn login-btn">Connexion</a>
-            <a href="#" class="btn signup-btn">Inscription</a>
+            <a href="{{ route('login') }}" class="btn login-btn">Connexion</a>
+            <a href="{{ route('register') }}" class="btn signup-btn">Inscription</a>
         </div>
     </div>
 </nav>
@@ -61,47 +60,37 @@
     <div class="container">
         <h2>Nos Catégories</h2>
         <div class="categories-list">
-            <div class="category">Fruits</div>
-            <div class="category">Légumes</div>
-            <div class="category">Boissons</div>
-            <div class="category">Snacks</div>
+            @foreach($categories as $categorie)
+                <div class="category">{{ $categorie->libelle }}</div>
+            @endforeach
         </div>
     </div>
 </section>
 
 <!-- Bannière de Produits -->
 <section class="product-banner">
+</section>
+
+<!-- Produits -->
+<section class="products">
     <div class="container">
-        <h2>Produits en vedette</h2>
-        <div class="banner">
-            <img src="https://img.freepik.com/photos-gratuite/concept-banniere-supermarche-ingredients_23-2149421145.jpg?t=st=1717971869~exp=1717975469~hmac=b9e26cc4907bf79f468eae14e620240de53da755151fb598bfe6e05f1a690fb8&w=1380" alt="Produits en vedette">
+        <h2>Tous les Produits</h2>
+        <div class="product-cards">
+            @foreach($produits as $produit)
+                <div class="product-card">
+                    <img src="{{ asset('storage/' . $produit->image) }}" alt="{{ $produit->designation }}">
+                    <div class="product-details">
+                        <h4>{{ $produit->designation }}</h4>
+                        <p>Prix: {{ $produit->prix_unitaire }} cfa</p>
+                        <div class="status-label {{ strtolower($produit->etat) }}">{{ $produit->etat }}</div>
+                        <a href="{{ route('produits.detail', $produit->id) }}" class="btn">Voir plus</a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
 
-<!-- Produits par Catégorie -->
-<section class="products-by-category">
-    <div class="container">
-        <h2>Produits par Catégorie</h2>
-        <div class="category-products">
-            <div class="category">
-                <h3>Fruits</h3>
-                <div class="products">
-                    <div class="product">Produit 1</div>
-                    <div class="product">Produit 2</div>
-                </div>
-            </div>
-            <div class="category">
-                <h3>Légumes</h3>
-                <div class="products">
-                    <div class="product">Produit 1</div>
-                    <div class="product">Produit 2</div>
-                </div>
-            </div>
-            <!-- Ajoutez d'autres catégories si nécessaire -->
-        </div>
-    </div>
-</section>
 
 <!-- Newsletter -->
 <section class="newsletter">
@@ -129,3 +118,4 @@
 
 </body>
 </html>
+
