@@ -7,10 +7,17 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LigneCommandeController;
+use App\Models\LigneCommande;
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 
 Route::get('/produits/{id}', [FrontendController::class, 'detail'])->name('produits.detail');
+
+// Les routes pour la ligne de commande
+Route::get('/ligneCommande', [LigneCommandeController::class, 'afficher'])->name('panier');
+Route::post('/ligneCommande/ajouter-produit', [LigneCommandeController::class, 'ajouterProduit'])->name('panier.ajouter');
+Route::delete('/ligneCommande/supprimer-produit/{id}', [LigneCommandeController::class, 'supprimerProduit'])->name('panier.supprimer');
 
 
 // Les routes pour le dashboard
