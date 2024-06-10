@@ -1,0 +1,374 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #083723;
+    color: #fff;
+    padding: 20px 50px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .auth-buttons {
+    display: flex;
+}
+
+.navbar .auth-buttons .btn {
+    margin-left: 15px;
+    padding: 8px 12px;
+    background-color: #fff;
+    color: #083723;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+
+.navbar .auth-buttons .btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hero Header */
+.hero {
+    height: 650px;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://img.freepik.com/photos-gratuite/ingredients-sains-inclus-dans-salade_23-2148173931.jpg?t=st=1717970529~exp=1717974129~hmac=19fa6bef99d74418d867329ab89c49e994e7a5574cc96f5ddceb67ea741bd00d&w=1380') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #083723;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.hero .btn:hover {
+    background-color: #0a4529;
+}
+
+/* Avantages */
+.advantages {
+    padding: 60px 0;
+    /* background-color: #f9f9f9; */
+    background-color: #0a4529;
+    text-align: center;
+}
+
+.advantages .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advantages h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.advantages-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.advantages .card {
+    background-color: none;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    color: white;
+}
+
+.advantages .card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.advantages .card p {
+    font-size: 16px;
+}
+
+/* Catégories */
+.categories {
+    padding: 90px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.categories .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categories h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.categories-list {
+    display: flex;
+    gap: 5%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.categories .category {
+    background-color: #083723;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categories .category:hover {
+    background-color: #0a4529;
+}
+
+
+/* Bannière de Produits */
+.product-banner {
+    height: 300px;
+    padding: 60px 0;
+    background: url('https://img.freepik.com/photos-gratuite/concept-banniere-supermarche-ingredients_23-2149421145.jpg?t=st=1717971869~exp=1717975469~hmac=b9e26cc4907bf79f468eae14e620240de53da755151fb598bfe6e05f1a690fb8&w=1380') no-repeat center center/cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+
+
+
+/*  */
+
+.products {
+    padding: 50px 0px;
+    background: #eeeeee;
+}
+
+.products h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.product-cards {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.product-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product-details h4 {
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    margin: 5px 0;
+}
+
+/* Styles for status label */
+.status-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.disponible {
+    background-color: green;
+}
+
+.en_rupture {
+    background-color: red;
+}
+
+.en_stock {
+    background-color: orange;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #083723;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #065a3e;
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 60px 0;
+    background-color: #083723;
+    color: #fff;
+    text-align: center;
+}
+
+.newsletter .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.newsletter h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+}
+
+.newsletter button {
+    padding: 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #0a4529;
+    color: #fff;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #0b5233;
+}
+
+/* Footer */
+.footer {
+    background-color: #083723;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer .footer-content p {
+    margin: 10px 0;
+}
+
+.footer .footer-links {
+    list-style: none;
+    display: flex;
+}
+
+.footer .footer-links li {
+    margin: 0 15px;
+}
+
+.footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .footer-links a:hover {
+    text-decoration: underline;
+}
