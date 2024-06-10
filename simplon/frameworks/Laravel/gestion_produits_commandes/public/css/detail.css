@@ -1,0 +1,90 @@
+
+
+.product-details {
+    width: 550px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin: 20px auto;
+    min-height: calc(80vh - 0px); /* 40px de marge en haut et en bas */
+}
+
+.product-image {
+    width: 100%;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.product-info {
+    padding: 20px;
+    border: 1px solid #083723;
+}
+
+.product-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #083723;
+}
+
+.product-info p {
+    margin-bottom: 10px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.status.disponible {
+    background-color: #0f9960; /* Vert */
+}
+
+.status.en_rupture {
+    background-color: #db4437; /* Rouge */
+}
+
+.status.en_stock {
+    background-color: #4285f4; /* Bleu */
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.btn {
+    background-color: #083723;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #065a3e;
+}
+
+.retour-btn {
+    width: 150px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #065a3e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.retour-btn:hover {
+    background-color: #0c9a6b;
+}

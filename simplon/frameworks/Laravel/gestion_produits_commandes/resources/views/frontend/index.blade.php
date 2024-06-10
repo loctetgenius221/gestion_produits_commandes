@@ -83,7 +83,7 @@
                         <h4>{{ $produit->designation }}</h4>
                         <p>Prix: {{ $produit->prix_unitaire }} cfa</p>
                         <div class="status-label {{ strtolower($produit->etat) }}">{{ $produit->etat }}</div>
-                        <button class="btn">Voir plus</button>
+                        <a href="{{ route('produits.detail', $produit->id) }}" class="btn">Voir plus</a>
                     </div>
                 </div>
             @endforeach

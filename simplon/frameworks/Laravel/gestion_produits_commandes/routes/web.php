@@ -10,6 +10,9 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 
+Route::get('/produits/{id}', [FrontendController::class, 'detail'])->name('produits.detail');
+
+
 // Les routes pour le dashboard
 
 Route::middleware(['auth'])->group(function () {

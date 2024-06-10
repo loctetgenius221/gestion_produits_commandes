@@ -14,4 +14,11 @@ class FrontendController extends Controller
         $produits = Produit::all();
         return view('frontend.index', compact('categories', 'produits'));
     }
+
+    public function detail($id) {
+
+        $categorie = Categorie::findOrFail($id);
+        $produit = Produit::find($id);
+        return view('frontend.detail', compact('produit'));
+    }
 }
