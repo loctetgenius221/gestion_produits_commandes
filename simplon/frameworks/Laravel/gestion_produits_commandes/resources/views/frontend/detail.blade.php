@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Kane & Frères</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 </head>
@@ -18,6 +19,7 @@
             <li><a href="#">Produits</a></li>
             <li><a href="#">Catégories</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="{{ route('panier') }}"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
         <div class="auth-buttons">
             <a href="{{ route('login') }}" class="btn login-btn">Connexion</a>
@@ -27,6 +29,22 @@
 </nav>
 
 <div class="product-details">
+    <!-- Message de succès -->
+    @if (session('success'))
+    <div class="alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    <!-- Messages d'erreur -->
+    @if ($errors->any())
+    <div class="alert">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <a href="{{ route('index') }}" class="btn retour-btn">Retour</a>
 
     <div class="product-image">
@@ -38,8 +56,15 @@
         <p>Catégorie: {{ $produit->categorie->libelle }}</p>
         <p>Prix: {{ $produit->prix_unitaire }}</p>
         <p>Etat: <span class="status {{ strtolower($produit->etat) }}">{{ $produit->etat }}</span></p>
-        <input type="number" name="quantity" value="1">
-        <button class="btn">Ajouter au Panier</button>
+
+        <!-- Formulaire pour ajouter au panier -->
+        <form action="{{ route('panier.ajouter-produit') }}" method="POST">
+            @csrf
+            <input type="hidden" name="produit_id" value="{{ $produit->id }}">
+            <input type="number" name="quantite" value="1">
+            <input type="hidden" name="prix_unitaire" value="{{ $produit->prix_unitaire }}">
+            <button type="submit" class="btn">Ajouter au Panier</button>
+        </form>
     </div>
 </div>
 

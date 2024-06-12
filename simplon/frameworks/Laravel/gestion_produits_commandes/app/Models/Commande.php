@@ -37,4 +37,10 @@ class Commande extends Model
         // Une commande peut contenir plusieurs produits à travers les lignes de commande
         return $this->belongsToMany(Produit::class, 'ligne_commandes')->withPivot('quantity', 'prix_unitaire')->using(LigneCommande::class);
     }
+
+    public function setReferenceAttribute($value)
+    {
+        // Générer une référence unique basée sur le timestamp actuel
+        $this->attributes['reference'] = 'CMD-' . time();
+    }
 }

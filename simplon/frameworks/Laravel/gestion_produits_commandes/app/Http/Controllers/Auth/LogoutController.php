@@ -11,6 +11,6 @@ class LogoutController extends Controller
     {
         auth()->logout();
 
-        return redirect('/login');
+        return redirect('/');
     }
 }

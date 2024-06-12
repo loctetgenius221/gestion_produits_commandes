@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Kane & Frères</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 <body>
+
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
 
 <!-- Navigation -->
 <nav class="navbar">
@@ -17,10 +30,17 @@
             <li><a href="#">Produits</a></li>
             <li><a href="#">Catégories</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="{{ route('panier') }}"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
         <div class="auth-buttons">
-            <a href="{{ route('login') }}" class="btn login-btn">Connexion</a>
-            <a href="{{ route('register') }}" class="btn signup-btn">Inscription</a>
+            @auth()
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="btn logout-btn">Déconnexion</button>
+                </form>
+            @endauth
+                <a href="{{ route('login') }}" class="btn login-btn">Connexion</a>
+                <a href="{{ route('register') }}" class="btn signup-btn">Inscription</a>
         </div>
     </div>
 </nav>

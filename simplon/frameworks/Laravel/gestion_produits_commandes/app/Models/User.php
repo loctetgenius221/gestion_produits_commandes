@@ -52,4 +52,9 @@ class User extends Authenticatable
         // Un user peut effectuer plusieurs commandes
         return $this->hasMany(Commande::class);
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
 }
