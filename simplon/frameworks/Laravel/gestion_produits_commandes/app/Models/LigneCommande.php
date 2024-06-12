@@ -10,12 +10,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class LigneCommande extends Model
 {
     use HasFactory;
+    protected $table = 'produit_commande';
+
 
     protected $fillable = [
         'commande_id',
         'produit_id',
         'quantite',
         'prix_unitaire'
+    ];
+    protected $attributes = [
+        'commande_id' => null, // Valeur par défaut
     ];
 
     public function commande()

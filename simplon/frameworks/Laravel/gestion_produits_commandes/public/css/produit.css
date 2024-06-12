@@ -118,7 +118,7 @@
     margin-bottom: 20px;
 }
 
-.alert {
+.alert-danger {
     padding: 10px;
     color: white;
     background-color: red;

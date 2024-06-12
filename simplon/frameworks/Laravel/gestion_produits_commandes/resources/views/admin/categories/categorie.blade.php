@@ -18,6 +18,8 @@
 
 
 <section class="section">
+    <h1>Catégorie</h1>
+
     <!-- Message de succès -->
     @if (session('success'))
     <div class="alert-succes">

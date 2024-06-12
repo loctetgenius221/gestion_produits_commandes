@@ -33,10 +33,10 @@
                     <i class="fa-solid fa-list"></i>
                     <span class="nav-item">Catégories</span>
                 </a></li>
-                <li><a href="{{ route('admin.clients') }}" class="sidebar-link">
+                {{-- <li><a href="{{ route('admin.clients') }}" class="sidebar-link">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">Clients</span>
-                </a></li>
+                </a></li> --}}
                 <li><a href="{{ route('admin.clients') }}" class="logout">
                     <form method="POST" action={{ route('logout') }}>
                         @csrf

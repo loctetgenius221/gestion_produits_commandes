@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Kane & Frères</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 </head>
@@ -18,6 +19,7 @@
             <li><a href="#">Produits</a></li>
             <li><a href="#">Catégories</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="{{ route('panier') }}"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
         <div class="auth-buttons">
             <a href="{{ route('login') }}" class="btn login-btn">Connexion</a>
@@ -56,7 +58,7 @@
         <p>Etat: <span class="status {{ strtolower($produit->etat) }}">{{ $produit->etat }}</span></p>
 
         <!-- Formulaire pour ajouter au panier -->
-        <form action="{{ route('panier.ajouter') }}" method="POST">
+        <form action="{{ route('panier.ajouter-produit') }}" method="POST">
             @csrf
             <input type="hidden" name="produit_id" value="{{ $produit->id }}">
             <input type="number" name="quantite" value="1">

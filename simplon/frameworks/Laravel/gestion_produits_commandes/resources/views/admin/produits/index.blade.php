@@ -16,6 +16,7 @@
 <body>
 
 <section class="section">
+    <h1>Produits</h1>
     <!-- Message de succès -->
     @if (session('success'))
     <div class="alert-success">

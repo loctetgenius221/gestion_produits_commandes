@@ -9,6 +9,18 @@
 </head>
 <body>
 
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
 <!-- Navigation -->
 <nav class="navbar">
     <div class="container">
@@ -21,8 +33,14 @@
             <li><a href="{{ route('panier') }}"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
         <div class="auth-buttons">
-            <a href="{{ route('login') }}" class="btn login-btn">Connexion</a>
-            <a href="{{ route('register') }}" class="btn signup-btn">Inscription</a>
+            @auth()
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="btn logout-btn">Déconnexion</button>
+                </form>
+            @endauth
+                <a href="{{ route('login') }}" class="btn login-btn">Connexion</a>
+                <a href="{{ route('register') }}" class="btn signup-btn">Inscription</a>
         </div>
     </div>
 </nav>

@@ -1,9 +1,8 @@
-.container {
+.panier-section {
+    width: 70%;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
 }
 
 h1 {
@@ -12,6 +11,7 @@ h1 {
 
 .table {
     width: 100%;
+    margin: auto;
     border-collapse: collapse;
 }
 

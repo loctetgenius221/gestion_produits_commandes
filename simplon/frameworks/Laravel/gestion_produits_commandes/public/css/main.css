@@ -200,6 +200,7 @@ body {
     height: 300px;
     padding: 60px 0;
     background: url('https://img.freepik.com/photos-gratuite/concept-banniere-supermarche-ingredients_23-2149421145.jpg?t=st=1717971869~exp=1717975469~hmac=b9e26cc4907bf79f468eae14e620240de53da755151fb598bfe6e05f1a690fb8&w=1380') no-repeat center center/cover;
+    background-attachment: fixed;
     text-align: center;
 }
 
@@ -273,6 +274,7 @@ body {
 }
 
 .btn {
+    text-decoration: none;
     background-color: #083723;
     color: #fff;
     padding: 8px 16px;

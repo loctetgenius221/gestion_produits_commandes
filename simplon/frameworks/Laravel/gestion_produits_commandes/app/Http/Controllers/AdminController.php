@@ -3,29 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produit;
+use App\Models\Commande;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index() {
-        return view('admin.index');
+        return view('admin.produits.index');
     }
-
-    // Crud produits
-    public function produits() {
-
-        
-    }
-
-
 
 
 
     // Crud Commandes
-    public function commandes() {
+    public function commandes()
+    {
+        $commandes = Commande::all();
+        return view('admin.commandes.index', compact('commandes'));
+    }
 
-        return view('admin.commandes');
+    public function modifierCommande(Request $request, $id)
+    {
+        $commande = Commande::find($id);
+        if ($commande) {
+            $commande->etat_commande = $request->input('etat_commande');
+            $commande->save();
+
+            return redirect()->back()->with('success', 'État de la commande mis à jour avec succès.');
+        }
+
+        return redirect()->back()->with('error', 'Commande non trouvée.');
     }
 
     // Crud Catégories
